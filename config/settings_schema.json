@@ -213,6 +213,17 @@
     ]
   },
   {
+    "name": "t:settings_schema.animations.name",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "scroll_toggle",
+        "label": "t:settings_schema.animations.settings.scroll_toggle.label",
+        "default": true
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.buttons.name",
     "settings": [
       {

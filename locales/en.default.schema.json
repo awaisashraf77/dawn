@@ -257,6 +257,14 @@
         }
       }
     },
+    "animations": {
+      "name": "Animations",
+      "settings": {
+        "scroll_toggle": {
+          "label": "Reveal sections on scroll"
+        }
+      }
+    },
     "social-media": {
       "name": "Social media",
       "settings": {
