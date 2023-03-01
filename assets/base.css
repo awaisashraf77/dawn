@@ -3116,3 +3116,64 @@ details-disclosure > details {
 .rte blockquote > * {
   margin: -0.5rem 0 -0.5rem 0;
 }
+
+/* Animations */
+
+.animation__trigger {
+  transition: opacity 0.55s ease-in-out;
+  opacity: 0;
+}
+
+.animation__trigger--active {
+  animation: 0.55s ease-in-out slideIn forwards;
+  animation-delay: calc(var(--animation-order) * 100ms);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(10vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Section-specific motion behavior. */
+
+.banner__media.animation__trigger {
+  transition: opacity var(--duration-long) ease-in-out;
+  opacity: 0;
+}
+
+.banner__media.animation__trigger--active {
+  animation: none;
+  opacity: 1;
+}
+
+.slideshow__slide:not(:first-of-type) .banner__media.animation__trigger {
+  opacity: 1;
+}
+
+/* Async loading prevents animation for Related Product cards. */
+.related-products .grid__item .animation__trigger {
+  opacity: 1;
+  animation: none;
+}
+
+/* Turn off animations if JS is turned off. */
+.no-js .animation__trigger,
+.no-js .animation__trigger--active {
+  opacity: 1;
+  animation: none;
+}
+
+/* Respect the visitor's motion preferences. */
+@media (prefers-reduced-motion) {
+  .animation__trigger,
+  .animation__trigger--active {
+    opacity: 1;
+    animation: none;
+  }
+}
